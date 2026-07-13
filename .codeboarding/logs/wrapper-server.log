@@ -1,0 +1,479 @@
+[stderr] INFO:     Started server process [13715]
+[stderr] INFO:     Waiting for application startup.
+[stderr] INFO:     Application startup complete.
+[stderr] INFO:     Uvicorn running on http://127.0.0.1:8765 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51776 - "GET /health HTTP/1.1" 200 OK
+[stderr] INFO:     ('127.0.0.1', 51777) - "WebSocket /ws" [accepted]
+[stderr] 2026-07-13 18:36:16 INFO     [codeboarding_pro.ws.server:258] WebSocket connected: session 846913fb-db71-4809-a511-e69590f92deb
+[stderr] INFO:     connection open
+[stderr] 2026-07-13 18:36:16 INFO     [tool_registry.manifest:320] has_required_tools: csharp missing or stale at /Users/ibrahim/.codeboarding/servers/bin/macos/pm-tools/csharp-ls/csharp-ls
+[stderr] 2026-07-13 18:36:16 INFO     [tool_registry.manifest:320] has_required_tools: csharp missing or stale at /Users/ibrahim/.codeboarding/servers/bin/macos/pm-tools/csharp-ls/csharp-ls
+[stderr] 2026-07-13 18:36:17 INFO     [tool_registry.installers:451] Installing Node.js packages: ['pyright@1.1.400', 'typescript-language-server@4.3.4', 'typescript@5.7', 'intelephense@1.16.5']
+[stderr] 2026-07-13 18:36:23 INFO     [tool_registry.installers:465] Node.js packages installed successfully
+[stderr] 2026-07-13 18:36:23 INFO     [tool_registry.installers:225]   tokei: already installed, skipping
+[stderr] 2026-07-13 18:36:23 INFO     [tool_registry.installers:225]   gopls: already installed, skipping
+[stderr] 2026-07-13 18:36:23 INFO     [tool_registry.installers:225]   rust-analyzer: already installed, skipping
+[stderr] 2026-07-13 18:36:23 INFO     [tool_registry.installers:489] java already installed
+[stderr] 2026-07-13 18:36:45 WARNING  [tool_registry.installers:397]   csharp-ls: dotnet install failed (exit 1): Tool 'csharp-ls' failed to update due to the following:
+[stderr] The settings file in the tool's NuGet package is invalid: Settings file 'DotnetToolSettings.xml' was not found in the package.
+[stderr] Tool 'csharp-ls' failed to install. Contact the tool author for assistance.
+[stderr] 
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.lsp.bootstrap:56] LSP startup attempt 1/3
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.session:187] Session 846913fb-db71-4809-a511-e69590f92deb initialized: repo=/Users/ibrahim/Desktop/GenAI, project=GenAI, output=/Users/ibrahim/Desktop/GenAI/.codeboarding
+[stderr] 2026-07-13 18:36:45 INFO     [static_analyzer:227] Starting engine LSP client for Python at /Users/ibrahim/Desktop/GenAI
+[stderr] 2026-07-13 18:36:45 INFO     [static_analyzer:252] Python LSP start: 0.2s
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.file_monitor:106] FileMonitor started for /Users/ibrahim/Desktop/GenAI
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.session:205] Session 846913fb-db71-4809-a511-e69590f92deb: FileMonitor activated
+[stderr] 2026-07-13 18:36:45 WARNING  [codeboarding_pro.head_watcher:69] HeadWatcher: could not resolve git-dir for /Users/ibrahim/Desktop/GenAI: Command '['git', 'rev-parse', '--git-dir']' returned non-zero exit status 128. — disabled
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.session:250] Session 846913fb-db71-4809-a511-e69590f92deb: LSP wiring complete
+[stderr] 2026-07-13 18:36:45 INFO     [codeboarding_pro.lsp.bootstrap:67] LSP clients started successfully (attempt 1)
+[stderr] 2026-07-13 18:38:45 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:38:46 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:38:46 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:38:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:38:49 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:38:49 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:43:04 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:43:05 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:43:05 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:43:37 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:43:38 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:43:38 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:43:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:43:48 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:43:48 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:43:58 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:43:58 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:43:58 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:44:04 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:44:05 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:44:05 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:44:07 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:44:08 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:44:08 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:44:26 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:44:26 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:44:26 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:45:27 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:45:27 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:45:27 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:45:59 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:46:00 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:46:00 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:46:03 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:46:03 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:46:03 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:46:19 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:46:19 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:46:19 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:47:31 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 18:47:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:47:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:47:38 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:47:38 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:47:38 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:47:58 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:47:58 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:47:58 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:49:34 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:49:34 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:49:34 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:49:50 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:49:50 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:49:50 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:50:00 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:50:01 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:50:01 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:50:19 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:50:20 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:50:20 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:50:33 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:50:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:50:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:50:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:50:48 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:50:48 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:51:58 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:51:59 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:51:59 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:52:50 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:52:51 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:52:51 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:53:45 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:53:46 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:53:46 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:54:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:54:24 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:54:24 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:54:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:54:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:54:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:55:07 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:55:08 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:55:08 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:55:13 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:55:13 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:55:13 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:55:25 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:55:26 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:55:26 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:55:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:55:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:55:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:56:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:56:06 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:56:06 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:56:08 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:56:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:56:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:56:18 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:56:18 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:56:18 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:56:52 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:56:52 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:56:52 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:57:08 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:57:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:57:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:57:28 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:57:28 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:57:28 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:58:11 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:58:12 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:58:12 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:58:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:58:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:58:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 18:58:50 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 18:58:51 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 18:58:51 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:02:09 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:02:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:02:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:02:09 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:02:10 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:02:10 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:02:16 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:02:17 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:02:17 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:02:25 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:02:25 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:02:25 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:02:35 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:02:35 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:02:35 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:03:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:03:24 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:03:24 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:03:26 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:03:27 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:03:27 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:03:32 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:03:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:03:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:03:45 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:03:45 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:03:45 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:03:57 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:03:58 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:03:58 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:04:00 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:04:00 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:04:00 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:04:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:04:25 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:04:25 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:04:47 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:04:47 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:04:47 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:07:22 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:07:22 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:07:22 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:07:56 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:07:57 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:07:57 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:08:06 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:08:06 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:19 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:08:20 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:08:20 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:27 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:08:27 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:08:27 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:42 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:08:43 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:08:43 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:56 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:08:57 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:08:57 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:08:59 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:09:00 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:09:00 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:09:16 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:09:16 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:09:16 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:09:28 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:09:28 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:09:28 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:10:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:10:48 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:10:48 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:11:11 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:11:12 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:11:12 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:12:05 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:12:06 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:12:06 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:12:25 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:12:26 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:12:26 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:13:15 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:13:16 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:13:16 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:14:32 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:14:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:14:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:14:45 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:14:45 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:14:45 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:18:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:18:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:18:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:19:35 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:19:36 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:19:36 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:20:00 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:20:01 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:20:01 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:20:33 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:20:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:20:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:21:11 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:21:12 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:21:12 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:21:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:21:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:21:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:21:40 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:21:41 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:21:41 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:22:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:22:07 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:22:07 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:23:51 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:23:52 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:23:52 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:24:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:24:06 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:24:06 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:24:22 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:24:22 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:24:22 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:24:29 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:24:30 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:24:30 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:25:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:25:25 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:25:25 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:25:37 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:25:37 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:25:37 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:26:01 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:26:02 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:26:02 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:26:09 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:26:10 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:26:10 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:26:11 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:26:12 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:26:12 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:26:31 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:26:31 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:26:31 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:26:43 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:26:43 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:26:43 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:28:10 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:28:11 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:28:11 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:29:15 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:29:16 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:29:16 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:30:12 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:30:12 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:30:12 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:30:26 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:30:26 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:30:26 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:30:41 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:30:42 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:30:42 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:30:54 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:30:55 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:30:55 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:31:09 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:31:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:31:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:36:01 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:36:01 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:36:01 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:37:12 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:37:13 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:37:13 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:37:36 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:37:36 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:37:36 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:37:46 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:37:46 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:37:46 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:07 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:07 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:08 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:21 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:21 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:21 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:25 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:26 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:26 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:32 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:38:41 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:38:42 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:38:42 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:51:04 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 19:51:04 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:51:04 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:53:42 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:53:43 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:53:43 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:53:43 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:53:44 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:53:44 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:54:25 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:54:25 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:54:25 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:56:58 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:56:59 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:56:59 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:58:31 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:58:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:58:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:58:49 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:58:49 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:58:49 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 19:59:21 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 19:59:21 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 19:59:21 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:01:02 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:01:02 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:01:02 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:03:17 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:03:18 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:03:18 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:04:09 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:04:09 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:04:09 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:04:33 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:04:33 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:04:33 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:05:40 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:05:41 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:05:41 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:05:46 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:05:46 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:05:46 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:05:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:05:48 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:05:48 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:06:34 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:06:35 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:06:35 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:06:51 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:06:51 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:06:51 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:07:42 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:07:42 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:07:42 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:07:49 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:07:50 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:07:50 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:09:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:09:25 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:09:25 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:09:26 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:09:27 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:09:27 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:09:51 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:09:51 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:09:51 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:10:55 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:10:55 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:10:55 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:11:15 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:11:15 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:11:15 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:11:18 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:11:18 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:11:18 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:11:31 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:11:32 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:11:32 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:11:59 INFO     [watchfiles.main:308] 2 changes detected
+[stderr] 2026-07-13 20:12:00 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:12:00 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:14:05 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:14:06 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:14:06 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:14:19 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:14:20 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:14:20 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:20:06 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:20:07 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:20:07 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:20:20 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:20:21 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:20:21 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:23:10 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:23:11 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:23:11 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:23:18 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:23:19 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:23:19 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:23:20 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:23:21 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:23:21 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:24:17 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:24:18 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:24:18 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:24:20 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:24:20 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:24:20 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:24:42 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:24:43 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:24:43 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:24:44 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:24:45 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:24:45 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:25:51 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:25:51 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:25:51 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:26:20 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:26:21 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:26:21 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:26:24 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:26:24 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:26:24 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:26:27 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:26:27 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:26:27 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:26:48 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:26:49 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:26:49 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
+[stderr] 2026-07-13 20:26:59 INFO     [watchfiles.main:308] 1 change detected
+[stderr] 2026-07-13 20:26:59 WARNING  [codeboarding_pro.analysis_controller:506] Skipping incremental update: full analysis artifacts not ready yet
+[stderr] 2026-07-13 20:26:59 INFO     [codeboarding_pro.analysis_controller:314] No cached analysis results; skipping health report
