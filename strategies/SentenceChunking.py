@@ -5,7 +5,10 @@ from nltk.tokenize import sent_tokenize
 from strategies.base import ChunkingStrategy
 
 class SentenceChunking(ChunkingStrategy):
+    """Groups whole sentences into chunks of `n` sentences each."""
+
     def __init__(self, chunk_size, n):
+        # chunk_size: reserved size hint; n: number of sentences per chunk.
         self.chunk_size = chunk_size
         self.n = n
         # try:
@@ -17,14 +20,16 @@ class SentenceChunking(ChunkingStrategy):
         # nltk.download('punkt') 
 
     def chunk(self, text):
+        # Tokenize into sentences with NLTK, then group every `n` sentences into one chunk.
         sentences = sent_tokenize(text)
         chunks = []
         for i in range(0, len(sentences), self.n):
             chunks.append(" ".join(sentences[i:i+self.n]))
-        
+
         return chunks
 
     def chunk_with_regix(self, text):
+        # Alternative splitter: break into sentences via regex (after ., ! or ?) without NLTK.
         sentences = re.split(r'(?<=[.!?])\s+', text)
         # chunks = []
         # for i in sentences:
