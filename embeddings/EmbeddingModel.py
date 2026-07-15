@@ -10,15 +10,3 @@ class EmbeddingModel:
     def embed_query(self,text):
         return self.embedding.embed_query(text)
     
-
-
-
-# if __name__ == "__main__":
-#     app = EmbeddingModel()
-#     text = [
-#         "Python is programming language",
-#         "Football is a sport",
-#         "Cats are animals"
-#     ]
-#     vectors = app.embed_document(text[0])
-#     print(vectors[0])

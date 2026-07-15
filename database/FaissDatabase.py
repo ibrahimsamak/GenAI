@@ -1,8 +1,8 @@
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
-from embeddings.EmbeddingModel import EmbeddingModel
+from database.VectorDatabase import VectorDatabase
 
-class FaissDatabase:
+class FaissDatabase(VectorDatabase):
     def __init__(self, embedding, persist_directory="vectorstores/faiss_store"):
         self.embedding = embedding
         self.persist_directory = persist_directory
@@ -22,6 +22,10 @@ class FaissDatabase:
 
     def similarity_search(self, query, k=3):
         return self.db.similarity_search(query, k=k)
+
+    def get_documents(self):
+        # FAISS keeps its documents in an in-memory docstore keyed by id.
+        return list(self.db.docstore._dict.values())
 
 
 

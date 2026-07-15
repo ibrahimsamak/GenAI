@@ -13,4 +13,4 @@ class RecursiveChunking(ChunkingStrategy):
     def chunk(self, text):
         # Recursively split on a hierarchy of separators to keep chunks near chunk_size.
         spliter = RecursiveCharacterTextSplitter(chunk_size=self.chunk_size, chunk_overlap=self.overlap)
-        return spliter.split_text(text)
+        return spliter.split_documents(text)

@@ -1,147 +1,163 @@
-# PDF Chunking Strategies
+# GenAI — A RAG Pipeline, Built Block by Block
 
-A hands-on playground for comparing text-**chunking** strategies used in RAG and LLM pipelines. It reads a PDF, extracts its text (or tables/pages), and splits the content using one of several interchangeable algorithms — all built around a clean, extensible object-oriented design.
+A hands-on learning project that assembles a Retrieval-Augmented Generation (RAG) pipeline from scratch,
+one module at a time — with a strong focus on clean, object-oriented design. It walks through every layer:
 
-Chunking is the step that decides *how* a document is broken into pieces before embedding or feeding it to a model. The chunk boundaries you pick have a large impact on retrieval quality, so this project makes it easy to swap strategies and see the difference.
+**PDF chunking → embeddings → vector databases → retrieval → hybrid search + re-ranking → a Gradio chat app**,
+plus a parallel **LlamaIndex** implementation of the same idea.
 
-## Chunking Strategies
+Each layer is a small, self-contained module with its own runnable `__main__` demo, so you can study any
+piece in isolation — and `Main.py` ties them together into a working end-to-end app (chunk a PDF, index
+it, and chat with it in the browser).
 
-| Strategy | File | Splits by | Notes |
-|---|---|---|---|
-| **Fixed** | `FixedChuncking.py` | Fixed number of words | Also supports fixed-size chunks with overlap |
-| **Sentence** | `SentenceChunking.py` | Groups of `n` sentences | Uses NLTK; regex-based variant included |
-| **Paragraph** | `ParagraphChuncking.py` | Blank lines (`\n\n`) | Preserves natural paragraph breaks |
-| **Sliding Window** | `SlidingWindowChunking.py` | Overlapping word windows | Retains context across chunk edges |
-| **Recursive** | `RecursiveChunking.py` | Recursive separators | Wraps LangChain's `RecursiveCharacterTextSplitter` |
-| **Page** | `PageChunking.py` | One chunk per PDF page | Uses PyMuPDF (`fitz`) |
-| **Table** | `TableChunking.py` | Extracted tables | Uses `pdfplumber.extract_tables` |
-| **Semantic** | `SemanticChunking.py` | Embedding similarity | Currently disabled — requires an OpenAI API key |
+---
 
-## Architecture
+## Demo
 
-The project is a textbook demonstration of the four pillars of object-oriented programming, applied through the **Strategy** design pattern.
+![The Gradio chat app: a conversation about the indexed PDF on the left, with the retrieved source chunks shown in the "Relevant Context" panel on the right.](data/image.png)
 
-### 🧩 Abstraction — a common interface
+*The end-to-end app (`python3 Main.py`): ask questions on the left, see the retrieved context that grounds each answer on the right.*
 
-`ChunkingStrategy` (in `strategies/base.py`) is an abstract base class that defines *what* every chunker must do, without saying *how*:
+---
+
+## Pipeline at a glance
+
+```
+ PDF ──► Chunking ──► Embeddings ──► Vector DB ──► Retrieval ──► Hybrid Search ──► Re-Ranking ──► Chat UI
+        strategies/   embeddings/   database/     retrieval/    rag_vector_system/  rag_vector_system/  chat/
+                                    (FAISS/Chroma)               (BM25 + vector)     (CrossEncoder)   (Gradio+OpenAI)
+
+ Main.py orchestrates:  chunk a PDF in data/ ──► build FAISS ──► launch Gradio chat
+ Alternative path:      rag_llamaindex/  (LlamaIndex + Hugging Face embeddings & LLM)
+```
+
+## Modules
+
+| Layer | Location | What it does |
+|---|---|---|
+| **Chunking** | `strategies/`, `Processor.py`, `Main.py` | 8 interchangeable PDF chunking strategies behind a common interface |
+| **Embeddings** | `embeddings/EmbeddingModel.py` | Wraps Hugging Face `all-MiniLM-L6-v2` sentence embeddings |
+| **Vector DBs** | `database/` | `FaissDatabase` & `ChromaDatabase` behind a shared `VectorDatabase` abstraction, chosen via a factory |
+| **Retrieval** | `retrieval/DocumentRetriever.py` | Exposes a vector store as a LangChain retriever |
+| **Hybrid search** | `rag_vector_system/HybridSearch.py` | Fuses BM25 (keyword) + vector search via `EnsembleRetriever` |
+| **Re-ranking** | `rag_vector_system/ReRanker.py` | Re-scores results with a CrossEncoder (`ms-marco-MiniLM-L-6-v2`) |
+| **Chat app** | `chat/ChatEngine.py`, `chat/ChatUI.py` | RAG chat: `ChatEngine` (retrieve + OpenAI LLM) behind a `ChatUI` (Gradio) |
+| **Orchestrator** | `Main.py` | Chunk → index → launch the chat over the input PDF |
+| **LlamaIndex RAG** | `rag_llamaindex/llamaIndex.py` | End-to-end RAG with HF embeddings + a HF-hosted LLM |
+
+## Object-oriented design
+
+The project is a working showcase of the four pillars of OOP, applied through the **Strategy** and
+**Factory** patterns.
+
+- **Abstraction** — `ChunkingStrategy`, `VectorDatabase`, and `HybridSearchBase` are abstract base
+  classes that define *what* their implementations must do, not *how*.
+- **Inheritance** — every chunker subclasses `ChunkingStrategy`; `FaissDatabase`/`ChromaDatabase`
+  subclass `VectorDatabase`; `HybridSearch` subclasses `HybridSearchBase`.
+- **Polymorphism** — `HybridSearch` works with *any* `VectorDatabase`. It never mentions FAISS or Chroma;
+  it only relies on the shared `get_documents()` / `as_retriever()` interface, so switching backends is a
+  one-line change.
+- **Encapsulation** — each class owns its own configuration and hides its internals behind a small public
+  interface (e.g. FAISS persistence details live inside `FaissDatabase`).
+
+### The payoff: swap the whole backend with one string
 
 ```python
-from abc import ABC, abstractmethod
+from embeddings.EmbeddingModel import EmbeddingModel
+from database.VectorDatabaseFactory import VectorDatabaseFactory
+from rag_vector_system.HybridSearch import HybridSearch
 
-class ChunkingStrategy(ABC):
-    @abstractmethod
-    def chunk(self, text):
-        pass
+emb = EmbeddingModel()
+db  = VectorDatabaseFactory.create("faiss", emb)   # ← change to "chroma"; nothing else changes
+db.load()
+
+results = HybridSearch(db, k=2).search("What is AI?")
 ```
 
-Callers only need to know that a strategy has a `chunk()` method — the details are abstracted away.
-
-### 🧬 Inheritance — each strategy extends the base
-
-Every concrete strategy inherits from `ChunkingStrategy` and reuses the shared contract:
-
-```python
-class FixedChuncking(ChunkingStrategy):
-    def __init__(self, chunk_size):
-        self.chunk_size = chunk_size
-
-    def chunk(self, text):
-        ...
-```
-
-### 🔀 Polymorphism — one processor, any strategy
-
-`ChunkProcessor` (in `Processor.py`) works with *any* chunking strategy without modification. Swap the strategy at runtime and the processor behaves accordingly:
-
-```python
-processor = ChunkProcessor(FixedChuncking(500))
-print(processor.process(text))
-
-processor.set_strategy(SentenceChunking(2, 5))
-print(processor.process(text))   # same call, different behavior
-```
-
-`ChunkProcessor` never needs to change when new strategies are added — it depends on the abstraction, not the implementations.
-
-### 🔒 Encapsulation — each strategy owns its logic and parameters
-
-Each strategy stores its own configuration (chunk size, overlap, sentence count, …) and hides its splitting logic behind the `chunk()` method. Internal details stay private to the strategy; the rest of the system doesn't need to know them.
-
-```
-┌──────────────────┐        uses        ┌─────────────────────┐
-│  ChunkProcessor  │ ─────────────────▶ │  ChunkingStrategy   │  (abstract)
-└──────────────────┘                    └─────────────────────┘
-                                                   ▲
-                    ┌──────────────┬───────────────┼───────────────┬─────────────┐
-              FixedChuncking  SentenceChunking  ParagraphChuncking  ...       TableChunking
-```
-
-## Project Structure
-
-```
-.
-├── Main.py                 # Entry point: reads test.pdf and runs a chosen strategy
-├── Processor.py            # ChunkProcessor — the Strategy-pattern context
-├── strategies/
-│   ├── base.py             # ChunkingStrategy abstract base class
-│   ├── FixedChuncking.py
-│   ├── SentenceChunking.py
-│   ├── ParagraphChuncking.py
-│   ├── SlidingWindowChunking.py
-│   ├── RecursiveChunking.py
-│   ├── PageChunking.py
-│   ├── TableChunking.py
-│   └── SemanticChunking.py
-└── test.pdf                # Sample input document
-```
-
-## Getting Started
+## Getting started
 
 ### Requirements
 
 - Python 3.12+
-- Install the dependencies:
+- There is no `requirements.txt` — install what each layer needs:
 
 ```bash
-pip install pdfplumber PyMuPDF nltk langchain-text-splitters
+# core RAG stack
+pip install pdfplumber PyMuPDF nltk \
+            langchain-community langchain-classic langchain-chroma \
+            langchain-huggingface langchain-text-splitters \
+            faiss-cpu chromadb rank_bm25 sentence-transformers python-dotenv
+
+# chat app (Main.py)
+pip install gradio langchain-openai
+
+# LlamaIndex path
+pip install llama-index llama-index-embeddings-huggingface llama-index-llms-huggingface-api
 ```
 
-The sentence strategy needs NLTK's `punkt` model. If `sent_tokenize` fails, download it once:
+The sentence chunker needs NLTK's `punkt` model (`python -c "import nltk; nltk.download('punkt')"`).
 
-```python
-import nltk
-nltk.download('punkt')
+### Configuration
+
+Create a `.env` file (already gitignored) with your API keys:
+
+```
+HF_KEY=hf_xxxxxxxxxxxxxxxxxxxxx
+OPEN_AI_KEy=sk-xxxxxxxxxxxxxxxxx      # used by the Gradio chat app (gpt-4.1-nano)
 ```
 
-> The **Semantic** strategy additionally requires `langchain-experimental`, `langchain-openai`, and an OpenAI API key. It is commented out by default.
+The `HF_KEY` token must have the **"Make calls to Inference Providers"** permission for the LlamaIndex LLM
+step. The chat app reads `OPENAI_API_KEY` first and falls back to `OPEN_AI_KEy`, so you can use the standard
+name instead if you prefer.
 
 ### Running
 
+Run every module as a **package from the project root** (not by file path — see the note below):
+
 ```bash
-python3 Main.py
+python3 Main.py                              # full app: chunk PDF → FAISS → launch Gradio chat
+python3 -m database.FaissDatabase            # build & persist a FAISS store
+python3 -m rag_vector_system.HybridSearch    # hybrid search + re-ranking
+python3 -m rag_llamaindex.llamaIndex         # LlamaIndex RAG (needs HF_KEY exported)
 ```
 
-`Main.py` reads `test.pdf` and runs a selected strategy. To try a different one, comment/uncomment the relevant lines in the `__main__` block. For example:
+`Main.py` opens the browser chat automatically. It needs both `.env` keys exported (see below) and a valid
+OpenAI key for `gpt-4.1-nano`.
 
-```python
-fixed_chunking = FixedChuncking(500)
-chunks = fixed_chunking.chunk(text)
+> ⚠️ **Always use `python3 -m package.Module` from the repo root.** Running `python3 database/FaissDatabase.py`
+> directly puts the file's folder on `sys.path` instead of the project root, which breaks cross-package
+> imports (`ModuleNotFoundError: No module named 'embeddings'`).
 
-sentence_chunking = SentenceChunking(2, 5)
-chunks = sentence_chunking.chunk(text)
+To load `.env` for a run:
 
-print(chunks)
+```bash
+set -a; . ./.env; set +a; python3 -m rag_llamaindex.llamaIndex
 ```
 
-## Adding a New Strategy
+## Chunking strategies
 
-1. Create a file in `strategies/` with a class that subclasses `ChunkingStrategy`.
-2. Implement the `chunk(self, text)` method.
-3. Import it in `Main.py` (or pass it to `ChunkProcessor`) — no other code needs to change.
+| Strategy | File | Splits by |
+|---|---|---|
+| Fixed | `strategies/FixedChuncking.py` | Fixed word count (with optional overlap) |
+| Sentence | `strategies/SentenceChunking.py` | Groups of `n` sentences (NLTK or regex) |
+| Paragraph | `strategies/ParagraphChuncking.py` | Blank lines |
+| Sliding Window | `strategies/SlidingWindowChunking.py` | Overlapping word windows |
+| Recursive | `strategies/RecursiveChunking.py` | LangChain recursive separators |
+| Page | `strategies/PageChunking.py` | One chunk per PDF page (PyMuPDF) |
+| Table | `strategies/TableChunking.py` | Extracted tables (pdfplumber) |
+| Semantic | `strategies/SemanticChunking.py` | Embedding similarity *(disabled — needs OpenAI key)* |
 
-That last point is the payoff of the design: the system is **open for extension, closed for modification**.
+## Notes & gotchas
 
-## Notes
-
-- Some class and file names contain intentional-looking spellings (`FixedChuncking`, `ParagraphChuncking`, `chunk_with_regix`). Reference them exactly as written to avoid breaking imports.
-- `PageChunking` and `TableChunking` operate on a **file path** rather than pre-extracted text, since page and table structure is lost once a PDF is flattened to plain text.
+- **FAISS is not auto-persisted** — call `save()`, then `load()` later. Chroma persists automatically and
+  *appends* on each `create()`, so delete `vectorstores/chroma_store` to avoid duplicate documents.
+- **LlamaIndex + `test.pdf`:** the default PDF reader garbles this file's fonts, so `llamaIndex` extracts
+  text with `pdfplumber` instead.
+- **HF LLM models must have a live inference provider.** `Qwen/Qwen2.5-7B-Instruct` works out of the box;
+  some models (e.g. old Mistral builds) have no live provider and return 404.
+- **Gradio 6:** `gr.Chatbot` no longer takes `type="messages"` (it's the default now), and `theme` is passed
+  to `launch()` rather than `gr.Blocks()`. Don't name a file `gradio.py` — it shadows the library on import.
+- A harmless `RLock … _recursion_count` traceback may print at exit on Python 3.12 (from the `multiprocess`
+  package) — it fires *after* the program finishes and can be ignored.
+- Several chunking class/file names contain intentional spellings (`FixedChuncking`, `ParagraphChuncking`,
+  `chunk_with_regix`). Reference them exactly to avoid breaking imports.

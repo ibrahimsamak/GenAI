@@ -1,8 +1,9 @@
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 from embeddings.EmbeddingModel import EmbeddingModel
+from database.VectorDatabase import VectorDatabase
 
-class ChromaDatabase:
+class ChromaDatabase(VectorDatabase):
     def __init__(self, embedding, persist_directory="vectorstores/chroma_store"):
         self.embedding = embedding
         self.persist_directory = persist_directory
@@ -17,7 +18,15 @@ class ChromaDatabase:
     
     def similarity_search(self, query, k=3):
         return self.db.similarity_search(query, k=k)
-    
+
+    def get_documents(self):
+        # Chroma stores texts/metadata separately; rebuild Document objects from get().
+        data = self.db.get()
+        return [
+            Document(page_content=text, metadata=meta or {})
+            for text, meta in zip(data["documents"], data["metadatas"])
+        ]
+
 # if __name__ == "__main__":
 #     texts = ["Python is used for AI."]
 #     embd = EmbeddingModel()

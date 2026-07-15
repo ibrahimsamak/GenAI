@@ -13,6 +13,8 @@ from database.ChromaDatabase import ChromaDatabase
 from database.FaissDatabase import FaissDatabase
 from embeddings.EmbeddingModel import EmbeddingModel
 from retrieval.DocumentRetriever import DocumentRetriever
+from chat.ChatEngine import ChatEngine
+from chat.ChatUI import ChatUI
 
 
 class Main:
@@ -34,7 +36,7 @@ class Main:
 
 
 if __name__ == "__main__":
-    app = Main("data/test.pdf")
+    app = Main("data/page.pdf")
     text = app.readFile()
 
     #  processor = ChunkProcessor(FixedChuncking(200))
@@ -44,18 +46,22 @@ if __name__ == "__main__":
     #  processor.set_strategy(SentenceChunking(2,5))
     #  print(processor.process(text))
 
-    fixed_chunking = FixedChuncking(100)
+    fixed_chunking = FixedChuncking(200)
     #  chunks = fixed_chunking.chunk(text);
     chunks = fixed_chunking.fixed_with_overlap(text, overlap=10);
     # print(chunks)
 
 
     embed = EmbeddingModel()
-    db = ChromaDatabase(embed)
-    db.load()
-    retriever = DocumentRetriever(db)
-    result = retriever.retrieve('main core')
-    print(result[0])
+    db = FaissDatabase(embed)
+    db.create(chunks)
+    db.save()
+    # retriever = DocumentRetriever(db)
+    # result = retriever.retrieve('what is python')
+    # print(result[0])
+
+    # After chunking + indexing, launch the chat UI over the FAISS store just built.
+    ChatUI(ChatEngine("faiss")).launch()
 
 
     #  sentence_chunking = SentenceChunking(2,5)
